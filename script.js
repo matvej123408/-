@@ -73,4 +73,5 @@ function checkNextStop() {
     // Переключаемся на следующую остановку через 3 секунды
     currentStop++;
     setTimeout(checkNextStop, 3000);
+    document.getElementById("startBtn").addEventListener("click", Старт);
 }
