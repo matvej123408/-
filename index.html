@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LiDAR Distance PWA</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0b5cff"/>
+  <style>
+    body { font-family: system-ui, -apple-system, Arial, sans-serif; margin: 0; background:#0f1220; color:#fff; }
+    header { padding: 12px 16px; background:#0b5cff; }
+    main { padding: 16px; }
+    button { padding: 10px 14px; margin: 6px 6px 6px 0; border-radius: 10px; border: none; cursor: pointer; }
+    .primary { background:#0b5cff; color:#fff; }
+    .ghost { background:#2a2f55; color:#fff; }
+    .card { background:#1a1f3b; border-radius: 14px; padding: 14px; margin-top: 12px; }
+    video, canvas { width: 100%; border-radius: 14px; background:#000; }
+    .muted { opacity:.8; font-size: 14px; }
+    .value { font-size: 28px; font-weight: 700; }
+  </style>
+</head>
+<body>
+<header>
+  <strong>LiDAR Distance (PWA)</strong>
+</header>
+<main>
+  <div class="card">
+    <button id="btnFront" class="primary">Передняя камера</button>
+    <button id="btnBack" class="ghost">Задняя камера</button>
+    <button id="btnAR" class="ghost">Запустить AR (LiDAR)</button>
+    <p class="muted">AR работает только на поддерживаемых устройствах (например, iPhone/iPad Pro с LiDAR, Safari).</p>
+  </div>
+
+  <div class="card">
+    <video id="video" autoplay playsinline></video>
+    <canvas id="overlay"></canvas>
+  </div>
+
+  <div class="card">
+    <div>Расстояние до объекта:</div>
+    <div id="distance" class="value">—</div>
+    <div class="muted">Если LiDAR недоступен, будет показано «не поддерживается».</div>
+  </div>
+</main>
+
+<script src="app.js"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => navigator.serviceWorker.register('sw.js'));
+  }
+</script>
+</body>
+</html>
