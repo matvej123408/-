@@ -1,0 +1,9 @@
+
+{
+    "name": "AR Distance Meter",
+    "short_name": "ARDistance",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#000000",
+    "theme_color": "#000000"
+}
