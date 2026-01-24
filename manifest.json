@@ -1,9 +1,0 @@
-
-{
-"name": "Camera Distance Warning",
-"short_name": "CamDistance",
-"start_url": ".",
-"display": "standalone",
-"background_color": "#000000",
-"theme_color": "#000000"
-}
